@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/twenty_dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/twenty_dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/twenty_dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0" />
+
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/rlTopParent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="?colorSecondary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBackButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:src="@drawable/ic_home"
+                    android:tint="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/ivBackButton"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivBackButton">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTitle"
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jio_type_bold"
+                        android:text="@string/lblRecordInventory"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_22" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_home"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+
+
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:layout_marginStart="@dimen/margin_20"-->
+<!--            android:layout_marginTop="@dimen/margin_25"-->
+<!--            android:id="@+id/ivBackButton"-->
+<!--            android:src="@drawable/ic_home"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_marginTop="@dimen/seventeen_dp"-->
+<!--            android:id="@+id/section_title"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:minHeight="?android:attr/actionBarSize"-->
+<!--            android:orientation="vertical"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/guideline_end"-->
+<!--            app:layout_constraintStart_toStartOf="@id/guideline_start"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/guideline_top">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:layout_gravity="start|center"-->
+<!--                    android:layout_marginStart="39dp"-->
+<!--                    android:layout_marginTop="@dimen/five_dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:fontFamily="@font/jio_type_bold"-->
+<!--                    android:gravity="start|center"-->
+<!--                    android:text="@string/record_inventory_small"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/text_size_22"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/margin_25"-->
+<!--                    android:layout_height="@dimen/margin_25"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_gravity="start|center"-->
+<!--                    android:layout_marginTop="@dimen/margin_25"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:visibility="gone"-->
+<!--                    android:gravity="start|center"-->
+<!--                   android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/text_size_24"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:srcCompat="@drawable/ic_home" />-->
+<!--            </RelativeLayout>-->
+
+
+<!--        </LinearLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/rlTopParent"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="@dimen/margin_10"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/ivBackButton"-->
+<!--            app:layout_constraintTop_toTopOf="@id/ivBackButton"-->
+<!--            app:layout_constraintLeft_toRightOf="@+id/ivBackButton">-->
+
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/tvTitle"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/jio_type_bold"-->
+<!--                android:text="@string/lblReconcileAssetsSmall"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="@dimen/text_size_22" />-->
+
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/iv_home"-->
+<!--                android:visibility="gone"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:src="@drawable/ic_home"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+<!--        </RelativeLayout>-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:visibility="invisible"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+           android:layout_weight="1"
+            android:id="@+id/tvDetails"
+            android:layout_marginTop="@dimen/margin_20"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            android:fontFamily="@font/jio_type_bold"
+            android:text="@string/detail_inventory"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/rlTopParent"
+            android:textSize="@dimen/text_size_18"
+            android:textStyle="bold" />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/registedCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ten_dp"
+            app:cardCornerRadius="@dimen/fourteen_dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetails">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/lightt_blue"
+                android:minHeight="80dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    android:minWidth="80dp"
+                    android:layout_gravity="center_vertical"
+                    android:minHeight="30dp"
+                    app:srcCompat="@drawable/ic_registered" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/registered"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/jio_type_medium"
+                    android:textSize="@dimen/text_size_13"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDeviceCount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="@dimen/thirty_dp"
+                    android:gravity="end"
+                    android:text="0"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_20"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/foundCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ten_dp"
+            app:cardCornerRadius="@dimen/fourteen_dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/registedCard">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_green"
+                android:minHeight="80dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    android:minWidth="80dp"
+                    android:layout_gravity="center_vertical"
+                    android:minHeight="30dp"
+                    app:srcCompat="@drawable/ic_found" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/jio_type_medium"
+                    android:textSize="@dimen/text_size_13"
+                    android:textStyle="bold"
+                    android:text="@string/found" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAssetCount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="@dimen/thirty_dp"
+                    android:gravity="end"
+                    android:text="0"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_20"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/notfoundCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ten_dp"
+            app:cardCornerRadius="@dimen/fourteen_dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/foundCard">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_orange"
+                android:minHeight="80dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    android:minWidth="80dp"
+                    android:minHeight="30dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_not_found" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProceedPeriodGoals"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/notfound"
+                    android:fontFamily="@font/jio_type_medium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_13"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCountLibrary"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="@dimen/thirty_dp"
+                    android:gravity="end"
+                    android:text="0"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_20"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/letstrack_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="@dimen/margin_fourty_two_dp"
+            android:background="@drawable/button_bg"
+            android:letterSpacing="0.1"
+            android:paddingLeft="@dimen/twenty_dp"
+            android:paddingRight="@dimen/twenty_dp"
+            android:src="@drawable/ic_graphic"
+            android:text="@string/view_record_inventory"
+            android:fontFamily="@font/jio_type_bold"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline_bottom"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

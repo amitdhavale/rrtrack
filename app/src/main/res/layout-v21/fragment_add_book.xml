@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_screen_background"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_25"
+        android:padding="@dimen/margin_10"
+        android:src="@drawable/ic_back" />
+
+    <ScrollView
+        android:layout_above="@id/buttonAdd"
+        android:layout_below="@+id/ivBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_new_book"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_home" />
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/userIV"
+                android:layout_width="125dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:src="@drawable/book" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUploadPicture"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/jio_type_bold"
+                android:text="@string/upload_new_image"
+                android:textAlignment="center"
+                android:textColor="@color/sky_blue" />
+
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:background="@drawable/rectangle_border"
+                android:padding="@dimen/fifteen_dp">
+
+                <TextView
+                    android:id="@+id/tvRfid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:text="Book RFID"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen_dp" />
+
+                <EditText
+                    android:id="@+id/etRfid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvRfid"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:fontFamily="@font/jio_type_light"
+                    android:hint="Book RFID"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sixteen_sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tvCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/twenty_dp"
+                    android:src="@drawable/ic_barcode" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:background="@drawable/rectangle_border"
+                android:padding="@dimen/fifteen_dp">
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:text="Book Title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen_dp" />
+
+                <EditText
+                    android:id="@+id/etBookTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv2"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:fontFamily="@font/jio_type_light"
+                    android:hint="Book Title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sixteen_sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:background="@drawable/rectangle_border"
+                android:padding="@dimen/fifteen_dp">
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:text="Description"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen_dp" />
+
+                <EditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv3"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:fontFamily="@font/jio_type_light"
+                    android:hint="Description"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sixteen_sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:background="@drawable/rectangle_border"
+                android:padding="@dimen/fifteen_dp">
+
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:text="Author"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen_dp" />
+
+                <EditText
+                    android:id="@+id/etAuthor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv4"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:fontFamily="@font/jio_type_light"
+                    android:hint="Author"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sixteen_sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:background="@drawable/rectangle_border"
+                android:padding="@dimen/fifteen_dp">
+
+                <TextView
+                    android:id="@+id/tvIsbn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:text="ISBN No."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen_dp" />
+
+                <EditText
+                    android:id="@+id/etIsbn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvIsbn"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:fontFamily="@font/jio_type_light"
+                    android:hint="ISBN No."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sixteen_sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/twenty_dp"
+                    android:src="@drawable/ic_barcode" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:background="@drawable/rectangle_border"
+                android:padding="@dimen/fifteen_dp">
+                <TextView
+                    android:id="@+id/tv9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:text="Search tag"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen_dp" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_below="@+id/tv9"
+                    android:id="@+id/rvSearchTag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:background="@drawable/rectangle_border"
+                android:padding="@dimen/fifteen_dp">
+                <TextView
+                    android:id="@+id/tv6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:text="Category"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen_dp" />
+
+                <Spinner
+                    android:layout_below="@+id/tv6"
+                    android:drawSelectorOnTop="true"
+                    android:entries="@array/item_categories"
+                    android:id="@+id/spinnerCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:background="@drawable/rectangle_border"
+                android:padding="@dimen/fifteen_dp">
+
+                <TextView
+                    android:id="@+id/tv8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:text="SubCategory"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen_dp" />
+
+                <Spinner
+                    android:layout_below="@+id/tv8"
+                    android:entries="@array/item_location"
+                    android:id="@+id/spinnerSubCatgeory"
+                    android:drawSelectorOnTop="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginBottom="70dp"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:background="@drawable/rectangle_border"
+                android:padding="@dimen/fifteen_dp">
+
+                <TextView
+                    android:id="@+id/tv7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:text="Location"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen_dp" />
+
+                <Spinner
+                    android:layout_below="@+id/tv7"
+                    android:entries="@array/item_location"
+                    android:id="@+id/spinnerLocation"
+                    android:drawSelectorOnTop="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAdd"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="364dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/button_background"
+        android:text="@string/save"
+        android:fontFamily="@font/jio_type_bold"
+        android:textColor="@color/white" />
+
+
+</RelativeLayout>

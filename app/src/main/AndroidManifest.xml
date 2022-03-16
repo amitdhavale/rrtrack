@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.markss.rfidtemplate">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_PRIVILEGED"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".application.Application"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RFIDTemplate"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="asset.trak.views.activity.TestActivity"
+            android:exported="true"
+            android:theme="@style/Theme.RFIDTemplate.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        <intent-filter>
+            <action android:name="com.rrtrack.SCAN" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name="asset.trak.views.activity.SplashAssetTrak"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.RFIDTemplate.NoActionBar">
+
+
+        </activity>
+        <activity
+            android:name=".modules.login.activity.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.RFIDTemplate.NoActionBar" />
+        <activity
+            android:name=".home.MainActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.RFIDTemplate.NoActionBar" />
+        <activity
+            android:name=".settings.SettingsDetailActivity"
+            android:exported="true"
+            android:label="@string/title_activity_settings_detail"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <service
+            android:name=".notifications.NotificationsService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".notifications.NotificationsReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+
+                <!-- Actions to be handled in the background should be registered here -->
+                <action android:name="com.rfidreader.battery.low" />
+                <action android:name="com.rfidreader.battery.critical" />
+                <action android:name="com.rfidreader.battery.charging" />
+                <action android:name="com.rfidreader.disconnected" />
+                <action android:name="com.rfidreader.connected" />
+                <action android:name="com.rfidreader.available" />
+                <action android:name="com.rfidreader.status.received" />
+                <action android:name="com.rfidreader.conn.failed" />
+                <action android:name="com.rfidreader.NFC.outofrange" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="asset.trak.scannercode.DWReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <activity android:name="asset.trak.views.activity.ConfigurationActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.RFIDTemplate.NoActionBar"
+            />
+    </application>
+
+</manifest>

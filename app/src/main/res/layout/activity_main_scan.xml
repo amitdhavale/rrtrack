@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/blue_"
+            android:visibility="visible" />
+        <LinearLayout
+            android:id="@+id/backLay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:paddingStart="@dimen/margin_10"
+            android:paddingTop="@dimen/sixteen_dp"
+            android:paddingBottom="@dimen/sixteen_dp"
+            android:paddingEnd="@dimen/margin_10"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:padding="@dimen/ten_dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="visible"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_back"
+                />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Configuration"
+                android:layout_marginLeft="@dimen/thirty_dp"
+                android:textSize="@dimen/text_size_20"
+                android:visibility="visible"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@+id/ivBack"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

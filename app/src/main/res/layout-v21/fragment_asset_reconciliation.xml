@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.ndroid.com/tools"
+    xmlns:tools1="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_bg_asset"
+    tools:context=".views.fragments.AssetReconciliationFragment">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/twenty_five_dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/twenty_five_dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/twenty_five_dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_25"
+        android:padding="@dimen/margin_10"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RelativeLayout
+        android:id="@+id/rlTopParent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_asset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jio_type_bold"
+            android:text="@string/lbl_asset_reconciliation"
+            android:textColor="@color/black"
+            android:textSize="@dimen/twenty_eight_sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_home"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLastRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/thirty_dp"
+        android:fontFamily="@font/jio_type_bold"
+        android:text="Assets last recorded: 02/02/2022"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sixteen_sp"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/rlTopParent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAssetReco"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingBottom="@dimen/thirty_dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/tvLastRecord"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools1:listitem="@layout/item_asset_reconcillation" />
+
+    <!--  <androidx.core.widget.NestedScrollView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          app:layout_constraintEnd_toEndOf="@id/guideline_end"
+          app:layout_constraintStart_toStartOf="@id/guideline_start"
+          app:layout_constraintTop_toBottomOf="@+id/tvLastRecord">
+
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+              <RelativeLayout
+                  android:id="@+id/rlMyDeviceParent"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/thirty_dp"
+                  android:background="@drawable/rectangle_my_device"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent">
+
+                  <androidx.appcompat.widget.AppCompatImageView
+                      android:id="@+id/ivMyDevice"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginStart="@dimen/twenty_dp"
+                      android:layout_marginTop="37dp"
+                      android:src="@drawable/ic_my_device" />
+
+                  <androidx.appcompat.widget.AppCompatTextView
+                      android:id="@+id/tvMyDevice"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_alignBaseline="@+id/ivMyDevice"
+                      android:layout_marginStart="@dimen/twenty_dp"
+                      android:layout_marginTop="37dp"
+                      android:layout_toEndOf="@+id/ivMyDevice"
+                      android:fontFamily="@font/helvetica_bold"
+                      android:text="@string/lblMyDevices"
+                      android:textColor="@color/black"
+                      android:textSize="@dimen/text_size_13" />
+
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_below="@+id/ivMyDevice"
+                      android:layout_marginStart="@dimen/twenty_dp"
+                      android:layout_marginTop="@dimen/twenty_nine_dp"
+                      android:layout_marginBottom="@dimen/twenty_four_dp"
+                      android:layout_toEndOf="@+id/ivMyDevice"
+                      android:orientation="horizontal"
+                      android:weightSum="3">
+
+                      <LinearLayout
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:orientation="vertical">
+
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:fontFamily="@font/opensans_light"
+                              android:text="@string/lblRegistered"
+                              android:textAlignment="textStart"
+                              android:textColor="@color/black"
+                              android:textSize="@dimen/text_size_14" />
+
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginStart="@dimen/ten_dp"
+                              android:fontFamily="@font/helvetica_bold"
+                              android:text="0"
+                              android:textAlignment="textStart"
+                              android:textColor="@color/black"
+                              android:textSize="@dimen/text_size_30" />
+
+                      </LinearLayout>
+
+                      <View
+                          android:layout_width="1dp"
+                          android:layout_height="match_parent"
+                          android:background="@color/divider_color" />
+
+                      <LinearLayout
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:orientation="vertical">
+
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:fontFamily="@font/opensans_light"
+                              android:text="@string/lblFound"
+                              android:textAlignment="center"
+                              android:textColor="@color/black"
+                              android:textSize="@dimen/text_size_14" />
+
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:fontFamily="@font/helvetica_bold"
+                              android:text="0"
+                              android:textAlignment="center"
+                              android:textColor="@color/black"
+                              android:textSize="@dimen/text_size_30" />
+
+                      </LinearLayout>
+
+                      <View
+                          android:layout_width="1dp"
+                          android:layout_height="match_parent"
+                          android:background="@color/divider_color" />
+
+                      <LinearLayout
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:orientation="vertical">
+
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:fontFamily="@font/opensans_light"
+                              android:text="@string/lblNotFound"
+                              android:textAlignment="center"
+                              android:textColor="@color/black"
+                              android:textSize="@dimen/text_size_14" />
+
+                          <androidx.appcompat.widget.AppCompatTextView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:fontFamily="@font/helvetica_bold"
+                              android:text="0"
+                              android:textAlignment="center"
+                              android:textColor="@color/black"
+                              android:textSize="@dimen/text_size_30" />
+
+                      </LinearLayout>
+
+                  </LinearLayout>
+
+              </RelativeLayout>
+-->
+
+    <!--<RelativeLayout
+        android:id="@+id/rlMyOtherAssets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/thirty_dp"
+        android:background="@drawable/rectangle_my_device"
+        android:backgroundTint="#BFFFDF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rlMyDeviceParent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMyOtherAssets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_dp"
+            android:layout_marginTop="37dp"
+            android:src="@drawable/ic_other_assets" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMyOtherAssets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/ivMyOtherAssets"
+            android:layout_marginStart="@dimen/twenty_dp"
+            android:layout_marginTop="37dp"
+            android:layout_toEndOf="@+id/ivMyOtherAssets"
+            android:fontFamily="@font/helvetica_bold"
+            android:text="@string/lblMyOtherAssets"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_13" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivMyOtherAssets"
+            android:layout_marginStart="@dimen/twenty_dp"
+            android:layout_marginTop="@dimen/twenty_nine_dp"
+            android:layout_marginBottom="@dimen/twenty_four_dp"
+            android:layout_toEndOf="@+id/ivMyOtherAssets"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_light"
+                    android:text="@string/lblRegistered"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/ten_dp"
+                    android:fontFamily="@font/helvetica_bold"
+                    android:text="0"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_30" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider_color" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_light"
+                    android:text="@string/lblFound"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/helvetica_bold"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_30" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider_color" />
+
+            <LinearLayout
+                android:id="@+id/linearNotFound"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_light"
+                    android:text="@string/lblNotFound"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/helvetica_bold"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_30" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlMyLibrary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/thirty_dp"
+        android:background="@drawable/rectangle_my_device"
+        android:backgroundTint="#BEF2FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rlMyOtherAssets">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMyLibrary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twenty_dp"
+            android:layout_marginTop="37dp"
+            android:src="@drawable/ic_library" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMyLibrary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/ivMyLibrary"
+            android:layout_marginStart="@dimen/twenty_dp"
+            android:layout_marginTop="37dp"
+            android:layout_toEndOf="@+id/ivMyLibrary"
+            android:fontFamily="@font/helvetica_bold"
+            android:text="@string/lblMyLibrary"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_13" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivMyLibrary"
+            android:layout_marginStart="@dimen/twenty_dp"
+            android:layout_marginTop="@dimen/twenty_nine_dp"
+            android:layout_marginBottom="@dimen/twenty_four_dp"
+            android:layout_toEndOf="@+id/ivMyLibrary"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:id="@+id/linearLibraryRegistered"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_light"
+                    android:text="@string/lblRegistered"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRegister3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/ten_dp"
+                    android:fontFamily="@font/helvetica_bold"
+                    android:text="128"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_30" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider_color" />
+
+            <LinearLayout
+                android:id="@+id/linearLibraryFound"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_light"
+                    android:text="@string/lblFound"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/helvetica_bold"
+                    android:text="60"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_30" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider_color" />
+
+            <LinearLayout
+                android:id="@+id/tvNotFound"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_light"
+                    android:text="@string/lblNotFound"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/helvetica_bold"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_30" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

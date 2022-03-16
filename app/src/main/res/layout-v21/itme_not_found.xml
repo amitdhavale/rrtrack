@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constLay123"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/ten_dp"
+    android:layout_marginTop="@dimen/ten_dp"
+    android:layout_marginBottom="@dimen/ten_dp"
+    android:background="@drawable/rectangle_background_border"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="@dimen/margin_10"
+    app:cardElevation="6dp"
+    app:cardPreventCornerOverlap="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/margin_10">
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tvTitle" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierAuther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tvAuthor" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tvCategory" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tvTag,tvSearch" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierLinear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="ivBook" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBook"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:adjustViewBounds="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:src="@drawable/book_law" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCheck"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="@dimen/five_dp"
+            android:src="@drawable/ic_selected_item"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/ivBook"
+            app:layout_constraintEnd_toEndOf="@id/ivBook"
+            app:layout_constraintStart_toStartOf="@id/ivBook"
+            app:layout_constraintTop_toTopOf="@id/ivBook" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/jio_type_bold"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Tile"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size_12"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_10"
+            android:ellipsize="end"
+            android:fontFamily="@font/jio_type_bold"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/barrierLinear"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/dummy" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_10"
+            android:layout_marginTop="@dimen/five_dp"
+            android:fontFamily="@font/jio_type_light"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/barrierLinear"
+            app:layout_constraintTop_toBottomOf="@id/barrierTitle"
+            tools:text="@string/dummy" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_10"
+            android:layout_marginTop="@dimen/five_dp"
+            android:fontFamily="@font/jio_type_light"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/barrierLinear"
+            app:layout_constraintTop_toBottomOf="@id/barrierAuther"
+            tools:text="@string/dummy" />
+
+        <TextView
+            android:id="@+id/tvTag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/five_dp"
+            android:layout_marginStart="@dimen/margin_10"
+            android:maxLines="2"
+            android:textColor="@color/btn_color"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvSearch"
+            app:layout_constraintStart_toEndOf="@+id/barrierLinear"
+            app:layout_constraintTop_toBottomOf="@id/barrierCategory"
+            tools:text="@string/dummy" />
+
+        <TextView
+            android:id="@+id/tvSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/ten_dp"
+            android:autoLink="email"
+            android:fontFamily="@font/jio_type_light"
+            android:gravity="right"
+            android:text="Search"
+            android:textColor="@color/sky_blue"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvTag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    android:id="@+id/constLay123"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:background="@drawable/rectangle_background"-->
+    <!--    app:cardCornerRadius="2dp"-->
+    <!--    app:cardBackgroundColor="#F3F3F3"-->
+    <!--    app:cardPreventCornerOverlap="false"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_marginStart="@dimen/margin_15"-->
+    <!--    android:layout_marginEnd="@dimen/margin_15"-->
+    <!--    android:layout_marginTop="@dimen/ten_dp"-->
+    <!--    android:layout_marginBottom="@dimen/ten_dp"-->
+    <!--    android:layout_height="wrap_content">-->
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:id="@+id/clMain"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+    <!--        <androidx.constraintlayout.widget.Barrier-->
+    <!--            android:id="@+id/barrierTitle"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:barrierDirection="bottom"-->
+    <!--            app:constraint_referenced_ids="tvTitle" />-->
+
+
+    <!--        <androidx.constraintlayout.widget.Barrier-->
+    <!--            android:id="@+id/barrierAuther"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:barrierDirection="bottom"-->
+    <!--            app:constraint_referenced_ids="tvAuthor" />-->
+
+    <!--        <androidx.constraintlayout.widget.Barrier-->
+    <!--            android:id="@+id/barrierCategory"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:barrierDirection="bottom"-->
+    <!--            app:constraint_referenced_ids="tvCategory" />-->
+
+    <!--        <androidx.constraintlayout.widget.Barrier-->
+    <!--            android:id="@+id/barrierTag"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:barrierDirection="bottom"-->
+    <!--            app:constraint_referenced_ids="tvEdition,tvSearch" />-->
+
+    <!--        <androidx.constraintlayout.widget.Barrier-->
+    <!--            android:id="@+id/barrierLinear"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:barrierDirection="end"-->
+    <!--            app:constraint_referenced_ids="ivBook" />-->
+
+    <!--        <androidx.appcompat.widget.AppCompatImageView-->
+    <!--            android:id="@+id/ivBook"-->
+    <!--            android:layout_width="75dp"-->
+    <!--            android:layout_height="75dp"-->
+    <!--            android:adjustViewBounds="true"-->
+    <!--            tools:src="@drawable/book_law"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent"-->
+    <!--            app:layout_constraintVertical_bias="0.0" />-->
+
+    <!--        <androidx.appcompat.widget.AppCompatImageView-->
+    <!--            android:id="@+id/ivCheck"-->
+    <!--            android:padding="@dimen/five_dp"-->
+    <!--            android:layout_width="40dp"-->
+    <!--            android:layout_height="40dp"-->
+    <!--            android:visibility="gone"-->
+    <!--            android:src="@drawable/ic_selected_item"-->
+    <!--            app:layout_constraintEnd_toEndOf="@id/ivBook"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@id/ivBook"-->
+    <!--            app:layout_constraintStart_toStartOf="@id/ivBook"-->
+    <!--            app:layout_constraintTop_toTopOf="@id/ivBook" />-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_centerInParent="true"-->
+    <!--            android:fontFamily="@font/jio_type_bold"-->
+    <!--            android:gravity="center"-->
+    <!--            android:padding="4dp"-->
+    <!--            android:text="Tile"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textAllCaps="false"-->
+    <!--            android:textSize="@dimen/text_size_12"-->
+    <!--            android:visibility="gone" />-->
+
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:id="@+id/tvTitle"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="@dimen/five_dp"-->
+    <!--            android:layout_marginStart="@dimen/margin_10"-->
+    <!--            android:textSize="@dimen/margin_10"-->
+    <!--            android:fontFamily="@font/jio_type_bold"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:maxLines="2"-->
+    <!--            android:ellipsize="end"-->
+    <!--            app:layout_constraintTop_toTopOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/barrierLinear"-->
+    <!--            tools:text="@string/dummy" />-->
+
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:id="@+id/tvAuthor"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="@dimen/margin_10"-->
+    <!--            android:layout_marginTop="@dimen/five_dp"-->
+    <!--            android:fontFamily="@font/jio_type_light"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="@dimen/text_size_10"-->
+    <!--            android:maxLines="2"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/barrierLinear"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/barrierTitle"-->
+    <!--            tools:text="@string/dummy"/>-->
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:id="@+id/tvCategory"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="@dimen/margin_10"-->
+    <!--            android:fontFamily="@font/jio_type_light"-->
+    <!--            android:layout_marginTop="@dimen/five_dp"-->
+    <!--            android:textSize="@dimen/text_size_10"-->
+    <!--            android:maxLines="2"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/barrierLinear"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/barrierAuther"-->
+    <!--            tools:text="@string/dummy" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvEdition"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_marginTop="@dimen/five_dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="@dimen/margin_10"-->
+    <!--            android:fontFamily="@font/jio_type_bold"-->
+    <!--            android:textColor="@color/btn_color"-->
+    <!--            android:textSize="@dimen/text_size_10"-->
+    <!--            android:maxLines="2"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/barrierLinear"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/barrierCategory"-->
+    <!--            app:layout_constraintEnd_toStartOf="@+id/tvSearch"-->
+    <!--            tools:text="@string/dummy" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvSearch"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:autoLink="email"-->
+    <!--            android:visibility="gone"-->
+    <!--            app:layout_constraintBaseline_toBaselineOf="@+id/tvEdition"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="parent" android:fontFamily="@font/jio_type_light"-->
+    <!--            android:text="Search"-->
+    <!--            android:textColor="@color/sky_blue"-->
+    <!--            android:textSize="@dimen/text_size_10"-->
+    <!--            android:textStyle="bold" />-->
+
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--</androidx.cardview.widget.CardView>-->
+

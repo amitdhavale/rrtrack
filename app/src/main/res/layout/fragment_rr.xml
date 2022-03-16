@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/llBottomParent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/twenty_dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/twenty_dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/twenty_dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.0" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBackButtonrr"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/twenty_dp"
+                android:src="@drawable/ic_home"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/rlTopParent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                app:layout_constraintBottom_toBottomOf="@id/ivBackButtonrr"
+                app:layout_constraintLeft_toRightOf="@id/ivBackButtonrr"
+                app:layout_constraintTop_toTopOf="@id/ivBackButtonrr">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:text="@string/lblRecordInventory"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_22" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_home"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RelativeLayout>
+
+            <ImageView
+                app:layout_constraintTop_toTopOf="@+id/rlTopParent"
+                app:layout_constraintBottom_toBottomOf="@+id/rlTopParent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                android:id="@+id/imgIgnore"
+                app:srcCompat="@drawable/ic_delete"
+                android:layout_width="32dp"
+                android:layout_height="32dp" />
+
+            <LinearLayout
+                android:id="@+id/llSpinnerParent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twenty_dp"
+                android:background="@drawable/rectangle_border"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/rlTopParent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLocation12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/ten_dp" />
+            </LinearLayout>
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/llSpinnerParent"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/margin_20"-->
+<!--                android:background="@drawable/rectangle_border"-->
+<!--                android:padding="@dimen/fifteen_dp"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/guideline_end"-->
+<!--                app:layout_constraintStart_toStartOf="@id/guideline_start"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/rlTopParent">-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/etRfid"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@id/tvRfid"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_toStartOf="@+id/ivScanBar"-->
+<!--                    android:background="@null"-->
+<!--                    android:fontFamily="@font/jio_type_light"-->
+<!--                    android:hint="@string/scan_location_barcode"-->
+<!--                    android:imeOptions="actionDone"-->
+<!--                    android:inputType="text"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/sixteen_sp"-->
+<!--                    app:iconifiedByDefault="false" />-->
+
+<!--                <androidx.appcompat.widget.AppCompatImageView-->
+<!--                    android:id="@+id/ivScanBar"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginEnd="@dimen/five_dp"-->
+<!--                    android:src="@drawable/ic_barcode" />-->
+
+<!--            </RelativeLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/llSpinnerParent"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/twenty_dp"-->
+<!--                android:background="@drawable/rectangle_border"-->
+<!--                android:orientation="vertical"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/guideline_end"-->
+<!--                app:layout_constraintStart_toStartOf="@id/guideline_start"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/rlTopParent">-->
+
+<!--&lt;!&ndash;                <androidx.appcompat.widget.AppCompatTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/tvLocation"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:drawableRight=""&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:padding="@dimen/ten_dp" />&ndash;&gt;-->
+<!--                <androidx.appcompat.widget.AppCompatEditText-->
+<!--                    android:id="@+id/etRfid"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@id/tvRfid"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:background="@null"-->
+<!--                    android:fontFamily="@font/jio_type_light"-->
+<!--                    android:hint="Book RFID"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/sixteen_sp" />-->
+
+<!--            </LinearLayout>-->
+
+
+            <TextView
+                android:id="@+id/tvInventoryReport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:fontFamily="@font/jio_type_bold"
+                tools:text="Inventory Report"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_16"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/llSpinnerParent" />
+
+            <TextView
+                android:id="@+id/tvILastRecord12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:fontFamily="@font/jio_type_medium"
+                android:text="@string/last_recorded_02_02_2022_10_43_am"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_15"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/tvInventoryReport" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/registeredParent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:background="@drawable/rectangle_border_inventory_gry"
+                android:orientation="horizontal"
+                app:cardCornerRadius="@dimen/fourteen_dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/tvILastRecord12">
+
+
+                <TextView
+                    android:id="@+id/tvRegistered"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/twenty_dp"
+                    android:fontFamily="@font/jio_type_medium"
+                    android:text="@string/lblRegistered"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvRegisteredCountrr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/twenty_three_dp"
+                    android:layout_marginTop="@dimen/twenty_eight_dp"
+                    android:layout_marginBottom="27dp"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:gravity="start"
+                    android:text="0"
+                    android:textColor="@color/btn_color"
+                    android:textSize="@dimen/text_size_30"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvRegistered"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/thirty_dp"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/thirty_dp"
+                    android:background="@color/divider_color_inventory"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tvScanned"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/twenty_dp"
+                    android:fontFamily="@font/jio_type_medium"
+                    android:text="@string/lblScanned"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvScannedCount"
+                    app:layout_constraintStart_toStartOf="@+id/view2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/uniqueTagContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginEnd="@dimen/twenty_dp"
+                    android:layout_marginBottom="@dimen/twenty_eight_dp"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:gravity="start"
+                    tools:text="0"
+                    android:textColor="@color/btn_color"
+                    android:textSize="@dimen/text_size_30"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/foundLocParent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:background="@drawable/rectangle_border_white"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                app:cardCornerRadius="@dimen/fourteen_dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/registeredParent">
+
+
+                <TextView
+                    android:id="@+id/tvFoundLoc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fourty_dp"
+                    android:layout_marginTop="@dimen/thirteen_dp"
+                    android:fontFamily="@font/jio_type_light"
+                    android:text="Found for\n Current Location"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFoundLocCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/thirteen_dp"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/reconciledTxtCountColor"
+                    android:textSize="@dimen/text_size_30"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tvFoundLoc"
+                    app:layout_constraintStart_toStartOf="@id/tvFoundLoc"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFoundLoc"
+                    tools:text="1234567890" />
+
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/thirty_dp"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/thirty_dp"
+                    android:background="@color/divider_color_inventory"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvNotFoundLoc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/thirteen_dp"
+                    android:layout_marginEnd="41dp"
+                    android:fontFamily="@font/jio_type_light"
+                    android:text="Not Found for\nCurrent Location"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvNotFoundLocCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:gravity="center"
+                    android:text="0"
+                    android:layout_marginBottom="@dimen/thirteen_dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textColor="@color/notReconciledTxtCountColor"
+                    android:textSize="@dimen/text_size_30"
+                    app:layout_constraintStart_toStartOf="@+id/tvNotFoundLoc"
+                    app:layout_constraintEnd_toEndOf="@+id/tvNotFoundLoc"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNotFoundLoc" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/foundForDifferentParent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:background="@drawable/rectangle_border_white"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                app:cardCornerRadius="@dimen/fourteen_dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/foundLocParent">
+
+
+                <TextView
+                    android:id="@+id/tvDiffLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fourty_dp"
+                    android:layout_marginTop="@dimen/thirteen_dp"
+                    android:fontFamily="@font/jio_type_light"
+                    android:text="Found for\nDifferent Location"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDiffLocationCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/thirteen_dp"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:gravity="start"
+                    android:text="0"
+                    android:textColor="@color/btn_color"
+                    android:textSize="@dimen/text_size_30"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tvDiffLocation"
+                    app:layout_constraintStart_toStartOf="@id/tvDiffLocation"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDiffLocation" />
+
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/thirty_dp"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/thirty_dp"
+                    android:background="@color/divider_color_inventory"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDifferentLocationCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/thirteen_dp"
+                    android:layout_marginEnd="66dp"
+                    android:fontFamily="@font/jio_type_light"
+                    android:text="Not\nRegistered"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvNotRegisteredCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/thirteen_dp"
+                    android:fontFamily="@font/jio_type_bold"
+                    android:gravity="start"
+                    android:text="0"
+                    android:textColor="@color/btn_color"
+                    android:textSize="@dimen/text_size_30"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvDifferentLocationCount"
+                    app:layout_constraintEnd_toEndOf="@+id/tvDifferentLocationCount"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDifferentLocationCount" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnScan123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/lightt_blue"
+        android:fontFamily="@font/jio_type_bold"
+        android:letterSpacing="0.1"
+        android:paddingStart="@dimen/thirty_dp"
+        android:paddingEnd="@dimen/thirty_dp"
+        android:src="@android:drawable/ic_media_pause"
+        android:tag="0"
+        android:theme="@style/fabtheme"
+        android:text="@string/stop"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_13"
+        app:layout_constraintBottom_toTopOf="@+id/llBottomParent2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_goneMarginBottom="@dimen/twenty_dp" />
+
+
+
+    <LinearLayout
+        android:id="@+id/llBottomParent2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/ten_dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnReconcile"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_weight="1"
+            android:background="@drawable/skyblue_border"
+            android:fontFamily="@font/jio_type_bold"
+            android:text="@string/lblReconcileAssets"
+            android:textColor="@color/sky_blue"
+            android:textSize="@dimen/text_size_13" />
+
+        <androidx.appcompat.widget.AppCompatButton
+
+            android:id="@+id/btnInventoryRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:text="@string/lblInventoryRecorded"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_13" />
+
+    </LinearLayout>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:context="com.markss.rfidtemplate.rapidread.RapidReadFragment">
+
+        <!-- <TextView
+             android:id="@+id/tv_prefilter_enabled"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textSize="8dp"
+             android:gravity="center"
+             android:textColor="#ff0000"
+             android:text="Pre filter is enabled"/>
+     -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="100">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+
+                <include layout="@layout/matching_progress_view"></include>
+
+                <ImageView
+                    android:id="@+id/fab_prefilter"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:onClick="filterClicked"
+                    android:src="@drawable/ic_nav_filter"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+
+            <FrameLayout
+                android:id="@+id/batchModeRR"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/style_medium_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="@dimen/default_padding"
+                    android:text="@string/batch_mode_inventory_title" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/inventoryDataLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/totalTagTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:text="@string/rr_total_tag_title"
+                        android:textSize="@dimen/rapid_read_small_title_font" />
+
+                    <TextView
+                        android:id="@+id/totalTagContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:text="888888888"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="60sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="150dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/uniqueTagTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/rr_unique_tags_title"
+                        android:textSize="@dimen/rapid_read_small_title_font" />
+
+                    <TextView
+                        android:id="@+id/uniqueTagContent1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="60sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/inventoryDataLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/readRateTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/rr_read_rate_title"
+                    android:textSize="@dimen/rapid_read_small_title_font" />
+
+                <TextView
+                    android:id="@+id/readRateContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="8888"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="45sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/readRateContent"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginRight="5dp"
+                    android:text="tags/second"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/readTimeTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/rr_read_time_title"
+                    android:textSize="@dimen/rapid_read_small_title_font" />
+
+                <TextView
+                    android:id="@+id/readTimeContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_left_margin"
+                    android:layout_marginRight="@dimen/default_right_margin"
+                    android:gravity="center"
+                    android:text="88:88:88"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="40sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/rr_inventoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/button_background"
+                android:onClick="inventoryStartOrStop"
+                android:text="@string/lblScan" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_clear"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/rr_inventoryButton"
+                android:text="Clear"
+                android:textSize="15dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_prefilter_enabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_inventoryButton"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Pre filter is enabled"
+                android:textColor="#8F8888"
+                android:textSize="15dp" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

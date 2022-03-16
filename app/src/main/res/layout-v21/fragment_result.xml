@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/ic_home_background"
+    tools:context=".views.fragments.CategoriesFragment">
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_25"
+        android:padding="@dimen/margin_10"
+        android:src="@drawable/ic_back" />
+
+
+
+    <LinearLayout
+        android:id="@+id/line1"
+        app:layout_constraintTop_toBottomOf="@id/ivBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitleBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jio_type_bold"
+            android:text="@string/add_new_book"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_home" />
+    </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_margin="@dimen/margin_20"
+        app:layout_constraintTop_toBottomOf="@id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginBottom="24dp"
+        >
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/rectangle_background"
+            android:backgroundTint="@color/color_background_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBook"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="@dimen/margin_10"
+            android:src="@drawable/book_law"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jio_type_bold"            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_15"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toEndOf="@+id/ivBook"
+            app:layout_constraintTop_toTopOf="@id/ivBook"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="AdministrativeLaw" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jio_type_light"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14"
+            android:layout_marginStart="@dimen/margin_10"
+            app:layout_constraintStart_toEndOf="@+id/ivBook"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Kenneth Warren" />
+
+        <TextView
+            android:id="@+id/tvTag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jio_type_bold"            android:textColor="@color/btn_color"
+            android:textSize="@dimen/text_size_14"
+            android:layout_marginStart="@dimen/margin_10"
+            app:layout_constraintStart_toEndOf="@+id/ivBook"
+            app:layout_constraintTop_toBottomOf="@id/tvAuthor"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Law ->Upper Shelf" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/ten_dp"
+        android:orientation="horizontal">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStartSearching"
+            android:textAllCaps="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_weight="1"
+            android:fontFamily="@font/jio_type_bold"
+            android:background="@drawable/button_background"
+            android:text="@string/start_searching"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
