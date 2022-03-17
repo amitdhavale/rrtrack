@@ -124,17 +124,9 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
 //                    e.printStackTrace()
 //                }
 //            }
-
-
-            replaceFragment(
-                requireActivity().supportFragmentManager, InventoryScanFragment(),
-                R.id.content_frame
-            )
-
-//            replaceFragment(
-//                requireActivity().supportFragmentManager, ViewInventoryFragment("location"),
-//                R.id.content_frame
-//            )
+          replaceFragment(
+              requireActivity().supportFragmentManager, ViewInventoryFragment("location"),
+                R.id.content_frame)
         }
         configLin.setOnClickListener {
             replaceFragment(
@@ -144,16 +136,16 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
         }
 
         linearSync.setOnClickListener {
-             if (RFIDController.mConnectedReader.isConnected) {
-                RFIDController.is_disconnection_requested = true
-                try {
-                    RFIDController.mConnectedReader.disconnect()
-                } catch (e: InvalidUsageException) {
-                    e.printStackTrace()
-                } catch (e: OperationFailureException) {
-                    e.printStackTrace()
-                }
-            }
+//             if (RFIDController.mConnectedReader.isConnected) {
+//                RFIDController.is_disconnection_requested = true
+//                try {
+//                    RFIDController.mConnectedReader.disconnect()
+//                } catch (e: InvalidUsageException) {
+//                    e.printStackTrace()
+//                } catch (e: OperationFailureException) {
+//                    e.printStackTrace()
+//                }
+//            }
             val intent1= Intent(requireActivity(), TestActivity::class.java)
             startActivity(intent1)
         }

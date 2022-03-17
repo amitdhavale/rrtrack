@@ -9,6 +9,7 @@
     tools:showIn="@layout/activity_main">
 
     <Button
+        android:visibility="gone"
         android:id="@+id/btnScan1"
         android:layout_width="0dp"
         android:layout_height="@android:dimen/notification_large_icon_height"
@@ -28,9 +29,18 @@
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/editTextTextEmailAddress3"
         android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/imgGo"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:layout_margin="@dimen/margin_10"/>
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/imgGo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/batt_icon" />
 
     <ListView
         android:id="@+id/listView1"

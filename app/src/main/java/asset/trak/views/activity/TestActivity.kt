@@ -20,6 +20,7 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import asset.trak.scannercode.*
+import com.markss.rfidtemplate.home.MainActivity
 import kotlinx.android.synthetic.main.activity_main_scan.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.app_bar_main.toolbar
@@ -48,7 +49,7 @@ class TestActivity : AppCompatActivity(), Observer, View.OnTouchListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_scan)
+        setContentView(R.layout.activity_test)
         setSupportActionBar(toolbar)
         ObservableObject.instance.addObserver(this)
         btnScan1.setOnTouchListener(this)
@@ -75,6 +76,11 @@ class TestActivity : AppCompatActivity(), Observer, View.OnTouchListener {
         adapter = ScanAdapter(this, scans)
         listView1?.adapter = adapter
         adapter.notifyDataSetChanged()
+
+        imgGo.setOnClickListener {
+            val intent1= Intent(this, MainActivity::class.java)
+            startActivity(intent1)
+        }
     }
 
     override fun onNewIntent(intent: Intent) {
